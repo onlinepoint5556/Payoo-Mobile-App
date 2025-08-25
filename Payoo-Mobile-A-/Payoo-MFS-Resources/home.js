@@ -121,7 +121,7 @@ document.getElementById("cashout-btn").addEventListener("click", function () {
     }
 
     let blance = getBlance("blance");
-    let amount = getInputValueNumber("minas-amount");
+    let amount = getInputValueNumber("cashout-amount");
     moneySubtract(blance, amount);
     alert("money cashout successfully")
 
