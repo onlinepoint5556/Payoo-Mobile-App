@@ -172,3 +172,12 @@ document.getElementById("pay-bill-btn").addEventListener("click", function () {
       alert("Bill Payed successfully")
 
 })
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------
+// log out system 
+document.getElementById("logout").addEventListener("click",()=>{
+    window.location.href="index.html";
+})
