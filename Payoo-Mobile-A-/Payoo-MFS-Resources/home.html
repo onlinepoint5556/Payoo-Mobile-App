@@ -34,7 +34,7 @@
                             <img src="assets/Group.png" alt="" class="w-12">
                         </div>
                         <div>
-                            <h2 class="font-bold text-lg">$<span>45000</span></h2>
+                            <h2 class="font-bold text-lg">$<span id="blance">45000</span></h2>
                             <p class="text-gray-500">Available Blance</p>
                         </div>
                     </div>
@@ -54,32 +54,36 @@
                 <!-- Welcom Area end -->
                 <!-- money section start -->
                 <div class="grid grid-cols-3 gap-5 mb-6 ">
-                    <div
+                    <!-- add money section  -->
+                    <div id="add-money-option"
                         class="flex flex-col justify-center items-center rounded-2xl border-solid border-1 border-gray-300 w-[140px] h-[100px]">
                         <img src="assets/wallet1.png" alt="" class="w-9 mx-auto">
-                        <h4 class="text-gray-700 text-center"> Add money</h4>
+                        <h4 id="add-money-option-tex" class="text-gray-700 text-center"> Add money</h4>
                     </div>
-                    <div
+                    <!-- cash out section  -->
+                    <div id="cash-out"
                         class="flex flex-col justify-center items-center rounded-2xl border-solid border-1 border-gray-300 w-[140px] h-[100px]">
                         <img src="assets/send1.png" alt="" class="w-9 mx-auto">
-                        <h4 class="text-gray-700 text-center"> Cashout</h4>
+                        <h4 id="cashout-text" class="text-gray-700 text-center"> Cashout</h4>
                     </div>
-                    <div
+                    <!-- transfar money section  -->
+                    <div id="transfer-money"
                         class="flex flex-col justify-center items-center rounded-2xl border-solid border-1 border-gray-300 w-[140px] h-[100px]">
                         <img src="assets/money1.png" alt="" class="w-9 mx-auto">
                         <h4 class="text-gray-700 text-center"> Transfer Money</h4>
                     </div>
-                    <div
+                    <!-- get bonus section  -->
+                    <div id="get-bonus"
                         class="flex flex-col justify-center items-center rounded-2xl border-solid border-1 border-gray-300 w-[140px] h-[100px]">
                         <img src="assets/bonus1.png" alt="" class="w-9 mx-auto">
                         <h4 class="text-gray-700 text-center"> Get Bonus </h4>
                     </div>
-                    <div
+                    <div id="pay-bil"
                         class="flex flex-col justify-center items-center rounded-2xl border-solid border-1 border-gray-300 w-[140px] h-[100px]">
                         <img src="assets/purse1.png" alt="" class="w-9 mx-auto">
                         <h4 class="text-gray-700 text-center"> Pay Bill </h4>
                     </div>
-                    <div
+                    <div id="transaction"
                         class="flex flex-col justify-center items-center rounded-2xl border-solid border-1 border-gray-300 w-[140px] h-[100px]">
                         <img src="assets/transaction1.png" alt="" class="w-9 mx-auto">
                         <h4 class="text-gray-700 text-center"> Transactions</h4>
@@ -88,8 +92,9 @@
                 </div>
             </div>
         </div>
-        <!-- money from start  -->
-        <div class="w-[95%] mx-auto p-5 mb-5">
+        <!-- money all tranjections from start  -->
+        <!-- "add money" from starts  -->
+        <div id="add-money-from" class="from w-[95%] mx-auto p-5 mb-5">
             <h2 class="mb-8 text-xl font-bold"> Add Money</h2>
             <div class="bg-white rounded-3xl p-5">
                 <div class="mb-4">
@@ -102,27 +107,152 @@
                     </select>
                 </div>
                 <div class="mb-4">
+                    <label class="font-semibold">Bank Account Number</label>
+                    <input type="text" placeholder="Enter 11 digit account number" id="account-number"
+                        class="input w-full mt-3 rounded-full border-none bg-[#F4F5F7]" />
+                </div>
+                <div class="mb-4">
                     <label class="font-semibold">Amount to Add</label>
-                    <input type="text" placeholder="Add amount to withdraw"
+                    <input type="text" placeholder="Add amount" id="add-amount"
                         class="input w-full mt-3 rounded-full border-none bg-[#F4F5F7]" />
                 </div>
                 <div class="mb-4">
                     <label class="font-semibold">Pin Number</label>
-                    <input type="text" placeholder="Enter 4 digit pin number"
+                    <input type="text" placeholder="Enter 4 digit pin number" id="pin-number"
                         class="input w-full mt-3 rounded-full border-none bg-[#F4F5F7]" />
                 </div>
+
                 <div class="mb-4">
-                    <label class="font-semibold">Bank Account Number</label>
-                    <input type="text" placeholder="Enter 11 digit account number"
-                        class="input w-full mt-3 rounded-full border-none bg-[#F4F5F7]" />
-                </div>
-                <div class="mb-4">
-                    <button id="login-btn" class="btn bg-[#0874F2] text-white w-full rounded-full "> Add Money </button>
+                    <button id="add-money-btn" class="btn bg-[#0874F2] text-white w-full rounded-full "> Add Money
+                    </button>
                 </div>
             </div>
         </div>
+        <!--  "add money" from  end-->
+
+        <!--  "cashout money"  starts-->
+        <div id="cashout-from" class=" from w-[95%] mx-auto p-5 mb-5 hidden">
+            <h2 class="mb-8 text-xl font-bold"> Cash Out</h2>
+            <div class="bg-white rounded-3xl p-5">
+                <div class="mb-4">
+                    <label class="font-semibold">Agent Number </label>
+                    <input type="text" placeholder="Enter 11 digit number" id="cashout-account-number"
+                        class="input w-full mt-3 rounded-full border-none bg-[#F4F5F7]" />
+                </div>
+                <div class="mb-4">
+                    <label class="font-semibold">Amount</label>
+                    <input type="text" placeholder="Add amount to withdraw" id="minas-amount"
+                        class="input w-full mt-3 rounded-full border-none bg-[#F4F5F7]" />
+                </div>
+                <div class="mb-4">
+                    <label class="font-semibold">Pin Number</label>
+                    <input type="text" placeholder="Enter 4 digit pin number" id="cashout-pin-number"
+                        class="input w-full mt-3 rounded-full border-none bg-[#F4F5F7]" />
+                </div>
+
+                <div class="mb-4">
+                    <button id="cashout-btn" class="btn bg-[#0874F2] text-white w-full rounded-full "> Cash Out
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--  "cashout money"  end-->
+
+
+        <!-- transfer-money-from start -->
+        <div id="transfer-money-from" class=" from w-[95%] mx-auto p-5 mb-5 hidden">
+            <h2 class="mb-8 text-xl font-bold"> Transfer Money</h2>
+            <div class="bg-white rounded-3xl p-5">
+                <!-- account number  -->
+                <div class="mb-4">
+                    <label class="font-semibold">User account Number </label>
+                    <input type="text" placeholder="Enter 11 digit number" id="transfer-account-number"
+                        class="input w-full mt-3 rounded-full border-none bg-[#F4F5F7]" />
+                </div>
+                <!-- amount  -->
+                <div class="mb-4">
+                    <label class="font-semibold">Amount</label>
+                    <input type="text" placeholder=" Enter amount to transfer" id="transfer-amount"
+                        class="input w-full mt-3 rounded-full border-none bg-[#F4F5F7]" />
+                </div>
+                <!-- pin number  -->
+                <div class="mb-4">
+                    <label class="font-semibold">Pin Number</label>
+                    <input type="text" placeholder="Enter 4 digit pin number" id="transfer-pin-number"
+                        class="input w-full mt-3 rounded-full border-none bg-[#F4F5F7]" />
+                </div>
+                <!-- button  -->
+                <div class="mb-4">
+                    <button id="transfer-btn" class="btn bg-[#0874F2] text-white w-full rounded-full "> Send Now
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- transfer-money-from end -->
+
+        <!-- get bonus fron start  -->
+                <div id="get-bonus-from" class=" from w-[95%] mx-auto p-5 mb-5 hidden">
+            <h2 class="mb-8 text-xl font-bold"> Get Bonus</h2>
+            <div class="bg-white rounded-3xl p-5">
+                <!-- Enter coupon  -->
+                <div class="mb-4">
+                    <label class="font-semibold">Enter Bonus Coupon</label>
+                    <input type="text" placeholder="Enter your coupon" id="coupon"
+                        class="input w-full mt-3 rounded-full border-none bg-[#F4F5F7]" />
+                </div>
+                <!-- button  -->
+                <div class="mb-4">
+                    <button id="get-bonus-btn" class="btn bg-[#0874F2] text-white w-full rounded-full "> Get Bonus
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- get bonus fron end  -->
+
+        <!-- pay bill from start -->
+                 <div id="pay-bill-from" class=" from w-[95%] mx-auto p-5 mb-5 hidden">
+            <h2 class="mb-8 text-xl font-bold"> Pay Bill </h2>
+            <div class="bg-white rounded-3xl p-5">
+                <!-- sclect tag  -->
+                   <div class="mb-4">
+                    <label class="font-semibold">Select To Pay</label>
+                    <select class="select w-full mt-3 rounded-full border-none bg-[#F4F5F7]">
+                        <option disabled selected> Select Bank </option>
+                        <option> Duch Bangla Bank</option>
+                        <option>Bkash</option>
+                        <option>Nagad</option>
+                    </select>
+                </div>
+                <!-- account number  -->
+                <div class="mb-4">
+                    <label class="font-semibold">Biller Account Number </label>
+                    <input type="text" placeholder="Enter account number" id="pay-bill-account-number"
+                        class="input w-full mt-3 rounded-full border-none bg-[#F4F5F7]" />
+                </div>
+                <!-- amount  -->
+                <div class="mb-4">
+                    <label class="font-semibold">Amount to pay</label>
+                    <input type="text" placeholder=" add amount to pay" id="pay-bill-amount"
+                        class="input w-full mt-3 rounded-full border-none bg-[#F4F5F7]" />
+                </div>
+                <!-- pin number  -->
+                <div class="mb-4">
+                    <label class="font-semibold">Pin Number</label>
+                    <input type="text" placeholder="Enter 4 digit pin number" id="pay-bill-pin"
+                        class="input w-full mt-3 rounded-full border-none bg-[#F4F5F7]" />
+                </div>
+                <!-- button  -->
+                <div class="mb-4">
+                    <button id="pay-bill-btn" class="btn bg-[#0874F2] text-white w-full rounded-full "> Pay Now
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- pay bil from end  -->
+
         <!-- money section end -->
     </div>
+    <script src="home.js"></script>
 </body>
 
 </html>
